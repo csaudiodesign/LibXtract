@@ -126,7 +126,7 @@ int xtract_spectrum(const double *data, const int N, const void *argv, double *r
             imag = fft[n*2+1];
 #else
             real = fft->realp[n];
-            imag = fft->realp[n];
+            imag = fft->imagp[n];
 #endif
 
             temp = XTRACT_SQ(real) + XTRACT_SQ(imag);
@@ -176,7 +176,7 @@ int xtract_spectrum(const double *data, const int N, const void *argv, double *r
             imag = fft[n*2+1];
 #else
             real = fft->realp[n];
-            imag = fft->realp[n];
+            imag = fft->imagp[n];
 #endif
 
             result[m] = (XTRACT_SQ(real) + XTRACT_SQ(imag)) / NxN;
